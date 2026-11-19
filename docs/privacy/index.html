@@ -17,9 +17,10 @@
 
   <main class="doc">
     <h1>Omniflick privacy policy</h1>
-    <p class="updated">Last updated: 16 November 2026</p>
+    <p class="updated">Last updated: 19 November 2026</p>
 
     <p>This policy explains what the Omniflick app (for Android TV, phones and tablets) does with your information. Omniflick is made by an independent developer, named as the developer on the app's Google Play listing ("we" or "the developer" below). It is free, has no ads and contains no analytics or advertising trackers.</p>
+    <p>Questions or requests about your data: email <a href="mailto:omniflickireland@gmail.com">omniflickireland@gmail.com</a>.</p>
 
     <div class="summary">
       <strong>In short</strong>
@@ -28,6 +29,7 @@
         <li>If you choose to sign in with Google, they are synced to a private cloud record that only you can read.</li>
         <li>Crash reports are sent so bugs can be fixed. They aren't linked to your name or email, and you can turn them off.</li>
         <li>Ask AI uses your own API key, which never leaves your device except to go to the AI service you picked.</li>
+        <li>Reviews you write and lists you share are public or visible to the people you send them to; everything else you sync is private.</li>
         <li>We don't sell your data, share it for advertising, or use it for anything other than running the app.</li>
       </ul>
     </div>
@@ -38,7 +40,7 @@
       <li>Your profiles, ratings, My List (watchlist), watched history, "Not interested" list and settings (such as your region and streaming services).</li>
       <li>API keys for the film data services (TMDB and OMDb), if you enter your own.</li>
       <li>Ask AI keys, if you add one (see <a href="#ask-ai">section 3</a>).</li>
-      <li>A short "Recent log" of what the app did lately (see <a href="#crash">section 4</a>).</li>
+      <li>A short "Recent log" of what the app did lately (see <a href="#crash">section 5</a>).</li>
     </ul>
     <p>This data stays on the device unless you turn on sync. You can delete it at any time (see <a href="../delete/">Delete your data</a>).</p>
 
@@ -53,6 +55,7 @@
     </ul>
     <p>Synced data is used only to provide sync to you. It is not shared with anyone, used for advertising, or sold. Omniflick's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
     <p>Firebase is run by Google, and data may be processed in the United States or other countries where Google operates, under <a href="https://firebase.google.com/support/privacy">Firebase's privacy and security terms</a>.</p>
+    <p><strong>Profiles linked to their own account (optional).</strong> On a shared TV or tablet, a profile can be linked to its owner's own Google account. That profile's ratings, lists and watched history are then saved to that person's own record, and the device signs in as that person for that profile. The device also saves a small note in that person's record (the device's make and model, the profile's name and when it was linked) so they can see on their phone where their account is linked and sign that device out. An optional PIN for the profile is stored only on the device, as a one-way hash.</p>
     <p>Older test versions synced through a file in your Google Drive's hidden app folder instead. Omniflick no longer does this; see <a href="../delete/">Delete your data</a> to remove that file.</p>
 
     <h2 id="ask-ai">3. Ask AI (optional, off until you add a key)</h2>
@@ -60,19 +63,30 @@
     <ul>
       <li><strong>Your key stays on your device.</strong> It's stored encrypted, with a key held in the Android Keystore. It's never synced, is left out of Android backups and device transfers, and is never sent to the developer or anyone else. It's sent only to the AI service you picked. You can remove it in Settings → Ask AI.</li>
       <li><strong>Sending a key from your phone to a TV:</strong> the QR code on the TV opens a page served by the TV itself over your home Wi-Fi, not the internet. The TV accepts it only while Settings → Ask AI is open, and only at the one-time address in the QR code.</li>
-      <li><strong>What's sent when you ask:</strong> your request (typed, or spoken and turned into text by Android's voice service), your country, the names of your streaming services, and a short summary of the current profile's taste: up to 60 highly rated, 25 low-rated and 40 middling titles with your scores, up to 150 other titles you've seen, up to 60 "Not interested" titles and up to 80 watchlist titles (title, year, and whether it's a film or series). No profile name, Google account, email address or device details are sent.</li>
+      <li><strong>What's sent when you ask:</strong> your request (typed, or spoken and turned into text by Android's voice service; see <a href="#microphone">Microphone</a>), your country, the names of your streaming services, and a short summary of the current profile's taste: up to 60 highly rated, 25 low-rated and 40 middling titles with your scores, up to 150 other titles you've seen, up to 60 "Not interested" titles and up to 80 watchlist titles (title, year, and whether it's a film or series). No profile name, Google account, email address or device details are sent.</li>
       <li>The AI service handles this under its own terms: <a href="https://www.anthropic.com/legal/privacy">Anthropic</a>, <a href="https://openai.com/policies/privacy-policy">OpenAI</a> or <a href="https://ai.google.dev/gemini-api/terms">Google</a>. The app asks OpenAI not to store requests. Google may use requests made on the free tier of the Gemini API to improve its products.</li>
       <li>Suggested titles are then looked up on TMDB, by name only, to check they exist and are on your services.</li>
+      <li><strong>Reporting an answer:</strong> if an answer is offensive, harmful or wrong, "Report this answer" under the picks sends the developer the reason you picked, the picks shown with the AI's reasons, your request (up to 300 characters), which AI service and model answered, the app version and the time. You don't need to be signed in, and no account, profile, device or Google details are sent. Reports are stored in Firebase Cloud Firestore, can be read only by the developer, are used only to check AI answers and improve how the app asks for them, and are deleted within 12 months.</li>
     </ul>
 
-    <h2 id="crash">4. Crash reports and the Recent log</h2>
+    <h2 id="reviews">4. Reviews and shared lists (optional)</h2>
+    <p><strong>Reviews.</strong> Anyone can read reviews in the app. Writing one needs sync switched on.</p>
+    <ul>
+      <li><strong>What's public:</strong> each review's rating (1 to 10), its text, whether it's marked as having spoilers, when it was posted and edited, the name you choose to show with it, and a random account ID (so people can hide a reviewer and only you can change your review). Your Google name, email address and picture are never shown.</li>
+      <li><strong>Private records:</strong> how many reviews you've saved today (for the limit of 10 a day) and which reviews you've written (so they can be deleted with your account). Only your account can read them.</li>
+      <li><strong>Reports:</strong> when you report a review, the app sends the review, its text, the reason you picked, your account ID and the time. Only the developer can read reports, and uses them only to check and remove reviews that break the rules. Reported reviews may be deleted without notice.</li>
+      <li><strong>Hidden reviewers:</strong> the reviewers you hide (their account ID and shown name) are kept on your device and in your synced data.</li>
+    </ul>
+    <p><strong>Shared lists.</strong> If you share one of your lists (My Stuff → Manage lists → Share list, which needs you signed in), a copy is saved in the same database: its name and the titles on it, the list's internal ID and your account ID, so only you can update or unshare it. It doesn't include your email address, name, profile name or ratings. <strong>Anyone who has the list's link or code can open that copy</strong>, so only send it to people you're happy to show it to. Shared lists can't be searched or browsed. Stop sharing deletes the copy straight away. Opening a list someone shared with you sends nothing about you.</p>
+
+    <h2 id="crash">5. Crash reports and the Recent log</h2>
     <ul>
       <li><strong>Recent log (on the device only):</strong> the app keeps its last 500 lines of activity (for example "Synced 120 titles" or "Opened Netflix") in its private storage. You can read or clear it in Settings → Recent log, and on a phone share it yourself. It never contains API keys, sign-in tokens, email addresses, names, Letterboxd usernames, what you searched for or what you asked the AI. It does contain title IDs (for example "movie:603") and the device's model and Android version.</li>
       <li><strong>Crash reports (on by default):</strong> if the app crashes or hits an unexpected error, it sends a report to Google Firebase Crashlytics. A report holds the error and where in the app's code it happened, the device model, Android version, free memory and disk space, the app version, a random ID for this installation, and the Recent log lines described above. It isn't linked to your Google account or email address, even when you're signed in. Reports are used only to fix bugs and are kept for 90 days.</li>
       <li><strong>Turning crash reports off:</strong> Settings → Recent log → Crash reports (on each device). Turning it off also deletes any reports not yet sent.</li>
     </ul>
 
-    <h2 id="services">5. Other services the app connects to</h2>
+    <h2 id="services">6. Other services the app connects to</h2>
     <p>To work, the app talks directly to these services. None of these requests include your name, email address or Google account.</p>
     <table>
       <thead><tr><th>Service</th><th>Why</th><th>What's sent</th></tr></thead>
@@ -85,35 +99,37 @@
       </tbody>
     </table>
     <p>Like any internet request, these services can see your device's IP address. Opening a title launches the streaming app you choose, which has its own privacy policy. A Letterboxd export file you import is read on your device; on a TV, your phone sends it to the TV over your home Wi-Fi.</p>
-    <p><strong>Voice search</strong> uses Android's own speech service. If your TV has no voice pop-up, the app asks for microphone permission and listens only while you're using voice search. The app doesn't record or keep audio.</p>
+    <h3 id="microphone">Microphone (voice search and Ask AI)</h3>
+    <p>Voice search and Ask AI can take spoken requests. When you press the mic, the app uses Android's own speech service to turn what you say into text. If your device has no built-in voice pop-up (common on TVs), the app asks for microphone permission and listens only while the mic button shows it's listening. Omniflick doesn't record, keep or send audio itself; only the resulting text is used, as described above. Speech recognition is handled by your device's voice service (usually Google) under its own terms. You can switch the mic button off in Settings → Voice search, or refuse or remove the microphone permission in Android settings, and type instead.</p>
 
-    <h2 id="sharing">6. Sharing and selling</h2>
-    <p>We don't sell your data, share it with advertisers or data brokers, or use it to build advertising profiles. Data goes only to the services described above, which act on our behalf (Firebase) or which you choose to use (AI services, streaming apps). We would disclose data only if required by law.</p>
+    <h2 id="sharing">7. Sharing and selling</h2>
+    <p>We don't sell your data, share it with advertisers or data brokers, or use it to build advertising profiles. Data goes only to the services described above, which act on our behalf (Firebase) or which you choose to use (AI services, streaming apps), and to the people you choose to show it to (reviews and shared lists). We would disclose data only if required by law.</p>
 
-    <h2 id="security">7. Security</h2>
+    <h2 id="security">8. Security</h2>
     <p>All network traffic uses encrypted connections (HTTPS), except the transfers on your own home Wi-Fi described above. Synced data is protected by Firebase's security rules so only your signed-in account can reach it. Ask AI keys are encrypted on the device.</p>
 
-    <h2 id="retention">8. How long data is kept</h2>
+    <h2 id="retention">9. How long data is kept</h2>
     <ul>
       <li>Device data: until you delete it, clear the app's data or uninstall.</li>
-      <li>Synced data and sign-in record: until you ask for them to be deleted.</li>
+      <li>Synced data, reviews, shared lists and sign-in record: until you delete them in the app or ask for them to be deleted.</li>
+      <li>Ask AI reports: up to 12 months.</li>
       <li>Crash reports: 90 days.</li>
     </ul>
 
-    <h2 id="delete">9. Deleting your data</h2>
-    <p>See <a href="../delete/">Delete your data</a> for step-by-step instructions, including how to ask for your synced data and sign-in record to be deleted.</p>
+    <h2 id="delete">10. Deleting your data</h2>
+    <p>In the app, Settings → Sync → <strong>Delete my cloud data and account</strong> deletes your synced data, reviews, shared lists and sign-in record straight away. See <a href="../delete/">Delete your data</a> for other ways, including without the app.</p>
 
-    <h2 id="rights">10. Your rights</h2>
-    <p>Wherever you live, you can ask to see, correct or delete the data held about you, or to get a copy of it, by contacting us (below). If you're in the European Economic Area or the UK, we process your data to provide features you've asked for (sync and Ask AI) and, for crash reports, on the basis of our legitimate interest in fixing bugs, which you can opt out of in Settings. You also have the right to complain to a data protection authority, such as Ireland's <a href="https://www.dataprotection.ie/">Data Protection Commission</a>.</p>
+    <h2 id="rights">11. Your rights</h2>
+    <p>Wherever you live, you can ask to see, correct or delete the data held about you, or to get a copy of it, by emailing <a href="mailto:omniflickireland@gmail.com">omniflickireland@gmail.com</a>. If you're in the European Economic Area or the UK, we process your data to provide features you've asked for (sync and Ask AI) and, for crash reports, on the basis of our legitimate interest in fixing bugs, which you can opt out of in Settings. You also have the right to complain to a data protection authority, such as Ireland's <a href="https://www.dataprotection.ie/">Data Protection Commission</a>.</p>
 
-    <h2 id="children">11. Children</h2>
+    <h2 id="children">12. Children</h2>
     <p>Omniflick is not directed at children under 13, and we don't knowingly collect personal information from them. Signing in to sync requires a Google account.</p>
 
-    <h2 id="changes">12. Changes to this policy</h2>
+    <h2 id="changes">13. Changes to this policy</h2>
     <p>If this policy changes, the new version will be posted on this page with a new "Last updated" date. Significant changes will also be mentioned in the app's release notes.</p>
 
-    <h2 id="contact">13. Contact</h2>
-    <p>For privacy questions or requests, email the developer at the address shown under "Developer contact" on Omniflick's Google Play listing, or <a href="https://github.com/gerardbutler-cork/StreamHub-TV-Release/issues">open an issue on GitHub</a> (please don't post personal details there).</p>
+    <h2 id="contact">14. Contact</h2>
+    <p>For privacy questions, requests and support, email <a href="mailto:omniflickireland@gmail.com">omniflickireland@gmail.com</a>.</p>
   </main>
 
   <footer class="site">
